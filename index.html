@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <main class="container mt-3">
+    <main class="container mt-4">
         <h2 class="fs-2 text-center mx-auto">Income-Expenses Calculator</h2>
         <section>
             <div class="row mt-5 ">
@@ -26,33 +26,45 @@
                 </div>
 
                 <!-- Calculator -->
-                <div class="col-md-6 shadow p-3 mb-5 bg-body rounded">
+                <div class="col-md-6 shadow mb-5 bg-body rounded">
                     <div class="text-center">
-                        <h3>Income</h3>
-                        <label class="fw-bold" for="fname">Income:</label>
-                        <input class="rounded" type="text" id="fname" name="fname"><br><br>
-                        <h3>Expenses</h3>
+
+                        <h3 class="ms-5 my-2">Income</h3>
+
+                        <label class="fw-bold " for="fname">Income:</label>
+                        <input id="income" class="rounded" type="text" id="fname" name="fname"><br><br>
+
+                        <h3 class="ms-5 mb-3">Expenses</h3>
+
                         <label class="fw-bold ms-3" for="Food">Food:</label>
-                        <input class="rounded" type="text" id="lname" name="Food"><br><br>
-                        <label class="fw-bold ms-3" for="lname">Rent:</label>
-                        <input class="rounded" type="text" id="lname" name="lname"><br><br>
+                        <input id="food" class="rounded" type="text" id="lname" name="Food"><br><br>
+
+                        <label class="fw-bold ms-3" for="lname">Rent :</label>
+                        <input id="rent" class="rounded" type="text" id="lname" name="lname"><br><br>
+
                         <label class="fw-bold" for="lname">Clothes:</label>
-                        <input class="rounded" type="text" id="lname" name="lname"><br><br>
-                        <button class="fw-bold px-5 py-1 mb-4 rounded bg-primary text-white">Calculate</button>
+                        <input id="clothes" class="rounded" type="text" id="lname" name="lname"><br><br>
+
+                        <button id="calculate-btn"
+                            class="fw-bold px-5 py-1 mb-4 ms-5 rounded bg-primary text-white">Calculate
+                        </button>
                     </div>
 
-                    <h3 class="fs-4 text-center">Total Expenses: <span>5500</span></h3>
-                    <h3 class="fs-4 text-center my-3">Balance: <span>5500</span></h3>
+                    <h3 id="total-expenses" class="fs-5 ms-5 text-center">Total Expenses: <span>00</span></h3>
+                    <h3 id="balance" class="fs-5 ms-5 text-center my-3">Balance: <span>00</span></h3>
+
                     <div class="text-center">
-                        <label class="fw-bold" for="lname">Save:</label>
-                        <input class="col-2 rounded" type="text" id="lname" name="lname"><span class="fw-bold"> %
+                        <label class="fw-bold ms-4" for="lname">Save:</label>
+                        <input id="save" class="col-2 rounded" type="text" id="lname" name="lname"><span
+                            class="fw-bold"> %
                         </span>
-                        <button class="fw-bold px-3 mb-4 rounded bg-primary text-white">Save</button>
+                        <button id="save-btn" class="fw-bold px-3 mb-4 rounded bg-primary text-white">Save</button>
                     </div>
 
                     <div>
-                        <h3 class="fs-4 text-center">Saving Amount: <span>5500</span></h3>
-                        <h3 class="fs-4 text-center">Remaining Balance: <span>5500</span></h3>
+                        <h3 id="saving-amount" class="fs-5 ms-5 text-center">Saving Amount: <span>00</span></h3>
+                        <h3 id="remaining-balance" class="fs-5 ms-5 mb-3 text-center">Remaining Balance: <span>00</span>
+                        </h3>
                     </div>
 
                 </div>
