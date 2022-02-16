@@ -6,7 +6,6 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const foodExp = document.getElementById('food');
     const rentExp = document.getElementById('rent');
     const clotheExp = document.getElementById('clothes');
-
     let expSum = parseInt(foodExp.value) + parseInt(rentExp.value) + parseInt(clotheExp.value);
 
     // Total Expenses
@@ -39,6 +38,14 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const extraBalanceFreash = parseFloat(extraBalanceRow.innerText)
 
     // Saving Percentage Calculation
+
+    if (saveInput > 100) {
+        return alert('Not Enough Balance')
+    }
+    if (isNaN(saveInput) || saveInput < 0) {
+        return alert('Please Input Valid Amount In Number Format')
+    }
+
     const savingPercentage = (extraBalanceFreash * saveInput) / 100;
     savingAmount.innerText = savingPercentage;
 
@@ -46,6 +53,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
     // Saving Amount and Remaining Balance
     const finalremainingBalance = extraBalanceFreash - savingPercentage;
     remainingBalance.innerText = finalremainingBalance;
+
 
 
 
