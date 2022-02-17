@@ -14,11 +14,11 @@ const remainingBalance = document.getElementById('remaining-balance');
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const income = document.getElementById('income');
     const expSum = Number(foodExp.value) + Number(rentExp.value) + Number(clotheExp.value);
-    if (foodExp.value < 0 || rentExp.value < 0 || clotheExp.value < 0) {
+    if (isNaN(foodExp.value) || income.value < 0 || foodExp.value < 0 || isNaN(rentExp.value) || rentExp.value < 0 || isNaN(clotheExp.value) || clotheExp.value < 0 || isNaN(income.value)) {
         return alert('Please Input Positive Number')
     }
-    if (isNaN(income.value) || income.value < expSum) {
-        return alert('Please Input Positive Number')
+    if (income.value < expSum) {
+        return alert('Your Income Amount Must Greater Than Your Total Expenses')
     }
 
     // Balance
