@@ -1,5 +1,4 @@
-
-// Income-Expenses Part
+// Call The Elements
 const foodExp = document.getElementById('food');
 const rentExp = document.getElementById('rent');
 const clotheExp = document.getElementById('clothes');
@@ -15,10 +14,10 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const income = document.getElementById('income');
     const expSum = Number(foodExp.value) + Number(rentExp.value) + Number(clotheExp.value);
     if (isNaN(foodExp.value) || income.value < 0 || foodExp.value < 0 || isNaN(rentExp.value) || rentExp.value < 0 || isNaN(clotheExp.value) || clotheExp.value < 0 || isNaN(income.value)) {
-        return alert('Please Input Positive Number')
+        return alert('Please Input Positive Number');
     }
     if (income.value < expSum) {
-        return alert('Your Income Amount Must Greater Than Your Total Expenses')
+        return alert('Your Income Amount Must Greater Than Your Total Expenses');
     }
 
     // Balance
@@ -26,7 +25,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     let inputAmount = Number(income.value);
 
     if (isNaN(inputAmount) || inputAmount < 0) {
-        return alert('Please Input Positive Amount In Number Format')
+        return alert('Please Input Positive Amount In Number Format');
     }
     let leftBalance = Number(income.value) - expSum;
     balance.innerText = leftBalance;
@@ -34,31 +33,24 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 // Saving Part
 document.getElementById('save-btn').addEventListener('click', function () {
-    const saveInputAmount = saveInput.value
+    const saveInputAmount = saveInput.value;
     const extraBalanceRow = document.getElementById('balance');
-    const extraBalanceFreash = parseFloat(extraBalanceRow.innerText)
+    const extraBalanceFreash = parseFloat(extraBalanceRow.innerText);
 
     // Saving Percentage Calculation
     if (saveInputAmount > 100) {
-        return alert('Not Enough Balance')
+        return alert('Not Enough Balance');
     }
     if (isNaN(saveInputAmount) || saveInputAmount < 0) {
-        return alert('Please Input Valid Amount In Number Format')
+        return alert('Please Input Valid Amount In Number Format');
     }
     const savingPercentage = (Number(income.value) * saveInputAmount) / 100;
     if (savingPercentage > extraBalanceRow.innerText) {
-        return alert('You Have Not Enough Balance To Save')
+        return alert('You Have Not Enough Balance To Save');
     }
     savingAmount.innerText = savingPercentage;
 
     // Saving Amount and Remaining Balance
     const finalremainingBalance = extraBalanceFreash - savingPercentage;
     remainingBalance.innerText = finalremainingBalance;
-
-
-
-
-
-
 })
-
